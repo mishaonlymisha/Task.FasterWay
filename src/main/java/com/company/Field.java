@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.List;
 import java.util.*;
 
 public class Field {
@@ -10,27 +9,19 @@ public class Field {
     private int[][] graph;
     private Vector<Integer> ports = new Vector();
     private int start_vert = noPoint, finish_vert = noPoint, start_port, finish_port, size, size_matrix;
-    private List<String> fieldFromJson = new ArrayList();
 
-    public Field(JsonField text) {
+    public Field(char[] text) {
 
-        fieldFromJson=text.getField();
-        size_matrix=fieldFromJson.size();
-        if (size_matrix > 20) {
-            throw new StackOverflowError("Input data is too big. Size was: " + size_matrix);
-        }
-        for (int i = 0; i <fieldFromJson.size() ; i++) {
-            if(fieldFromJson.get(i).length()!=fieldFromJson.size())
-                throw new EmptyStackException();
-        }
-            field=new char [size_matrix][size_matrix];
-        for (int i = 0; i <size_matrix; i++) {
-            for (int j = 0; j <size_matrix; j++) {
-                field[i][j]=fieldFromJson.get(i).charAt(j);
+        char[] matrix = text;
+        size_matrix = (int) Math.sqrt(matrix.length);
+        field = new char[size_matrix][size_matrix];
+        int elem = 0;
+        for (int i = 0; i < size_matrix; i++) {
+            for (int j = 0; j < size_matrix; j++) {
+                field[i][j] = matrix[elem];
+                elem++;
             }
         }
-
-
         int[][] field2 = new int[size_matrix][size_matrix];
         int count_vertex = 0;
         for (int i = 0; i < size_matrix; i++) {
@@ -114,6 +105,7 @@ public class Field {
                 }
             }
         }
+
     }
 
     public int GetWay(int from, int to) {

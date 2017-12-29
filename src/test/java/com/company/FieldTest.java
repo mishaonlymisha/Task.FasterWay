@@ -2,6 +2,7 @@
 //import org.testng.annotations.Test;
 //
 //
+//import java.io.File;
 //import java.util.EmptyStackException;
 //import java.util.NoSuchElementException;
 //
@@ -11,12 +12,13 @@
 //public class FieldTest {
 //    @Test
 //    public void GetFAsterWay (){
-//       // new File(getClass().getResource("test.json"))
+//
+//        File file = new File(getClass().getResource("").getFile());
 //        char []test={'*','*','^','f',
 //                     'p','*','*','P',
 //                     '*','*','*','*',
 //                     'S','*','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -29,7 +31,7 @@
 //                     'P','*','^','P',
 //                     '*','*','*','*',
 //                     'S','F','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -42,7 +44,7 @@
 //                     'P','*','^','P',
 //                     '*','*','*','*',
 //                     'S','*','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -55,7 +57,7 @@
 //                     '*','*','^','*',
 //                     '*','*','*','*',
 //                     'S','P','P','F'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -68,7 +70,7 @@
 //                     'P','*','*','^','P',
 //                     '^','*','*','*','*',
 //                     'S','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -82,7 +84,7 @@
 //                     '*','*','*','^','*',
 //                     '*','*','*','*','*',
 //                     'S','P','^','P','F'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -96,7 +98,7 @@
 //                     'P','*','*','*','P',
 //                     '*','*','*','*','*',
 //                     'S','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -111,7 +113,7 @@
 //                     'P','*','^','*','^','*',
 //                     '*','*','*','*','^','*',
 //                     'S','*','*','*','^','F'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -126,7 +128,7 @@
 //                     '*','^','*','*','^','*',
 //                     '*','^','*','P','^','*',
 //                     '*','*','*','*','^','F'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -142,7 +144,7 @@
 //                     'P','^','*','*','*','P',
 //                     '*','*','*','*','*','F'};
 //
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -155,7 +157,7 @@
 //                     'P','*','^','P',
 //                     '*','*','^','^',
 //                     'S','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.GetWay(8,2);
 //
@@ -168,7 +170,7 @@
 //                     'P','*','^','P',
 //                     '*','*','^','^',
 //                     'S','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.GetWay(3,5);
 //
@@ -181,7 +183,7 @@
 //                     'P','*','*','P',
 //                     '^','^','*','*',
 //                     'S','^','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -195,7 +197,7 @@
 //                     '^','^','^','^','P',
 //                     '*','*','*','^','*',
 //                     'S','*','*','^','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -210,7 +212,7 @@
 //                     'P','*','*','*','P','*',
 //                     '*','*','*','*','*','*',
 //                     'S','*','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -225,7 +227,7 @@
 //                     'P','*','^','^','P','*',
 //                     '*','*','*','*','*','*',
 //                     'S','*','*','*','*','P'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -238,7 +240,7 @@
 //                     'P','*','*','^',
 //                     '*','*','^','P',
 //                     'S','*','*','^'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -252,7 +254,7 @@
 //                     'P','^','*','*','P',
 //                     '^','*','^','*','^',
 //                     'S','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -267,7 +269,7 @@
 //                     '^','*','*','*','*','^',
 //                     '^','^','^','^','*','^',
 //                     'S','*','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -282,7 +284,7 @@
 //                     '^','*','*','*','*','^',
 //                     '^','^','^','^','*','*',
 //                     '*','*','*','*','*','S'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -297,7 +299,7 @@
 //                     '*','^','*','*','*','^',
 //                     '*','^','^','^','*','*',
 //                     '*','*','P','^','*','S'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -310,7 +312,7 @@
 //                     'P','*','P','*',
 //                     'P','*','*','*',
 //                     'S','P','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -323,7 +325,7 @@
 //                     'S','P','*','*','*',
 //                     '*','*','*','*','*',
 //                     'P','P','*','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -336,7 +338,7 @@
 //                     'S','P','P','^','F',
 //                     '*','*','*','*','P',
 //                     '*','P','P','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -349,7 +351,7 @@
 //                     'S','P','P','*','F',
 //                     '*','*','*','*','P',
 //                     '*','P','P','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -362,7 +364,7 @@
 //                     'P','*','F',
 //                     '*','*','*','*','P',
 //                     '*','P','P','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = NullPointerException.class)
 //    public void NullImput (){
@@ -374,7 +376,7 @@
 //                     ' ',' ',' ',' ',
 //                     ' ',' ',' ',' ',
 //                     'S',' ',' ',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = NoSuchElementException.class)
 //    public void NoFinish (){
@@ -382,7 +384,7 @@
 //                     ' ',' ',' ','P',
 //                     ' ',' ','P',' ',
 //                     'S',' ',' ',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = NoSuchElementException.class)
 //    public void NoStart (){
@@ -390,7 +392,7 @@
 //                     ' ','F',' ','P',
 //                     ' ',' ','P',' ',
 //                     ' ',' ',' ',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = StackOverflowError.class)
 //    public void DataOverflow (){
@@ -416,7 +418,7 @@
 //                ' ',' ',' ',' ', ' ','F',' ','P', ' ',' ','P',' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',
 //                ' ',' ',' ',' ', ' ','F',' ','P', ' ',' ','P',' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',
 //                ' ',' ',' ',' ', ' ','F',' ','P', ' ',' ','P',' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test
 //    public void OtherSymbols (){
@@ -424,7 +426,7 @@
 //                     '9','F',' ','P',
 //                     ' ',' ','P','l',
 //                     's','a',' ','c'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //        assertThat(result,is(6));
@@ -435,7 +437,7 @@
 //                     ' ','F',' ','P',
 //                     ' ','s','P',' ',
 //                     'S','s',' ',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = StackOverflowError.class)
 //    public void SeveralFinishs (){
@@ -443,7 +445,7 @@
 //                     ' ','F',' ','P',
 //                     'F','s','P',' ',
 //                     'f',' ',' ',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //    @Test(expectedExceptions = StackOverflowError.class)
 //    public void SeveralStartsAndFinishs (){
@@ -451,7 +453,7 @@
 //                     ' ','F',' ','P',
 //                     'F','s','P','a',
 //                     'f','S','s',' '};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //    }
 //
 //
@@ -465,7 +467,7 @@
 //                     '*','^','^','^','*','P','*',
 //                     'S','*','P','^','P','F','*',
 //                     '*','P','*','*','*','P','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -480,7 +482,7 @@
 //                     '*','^','^','^','*','P','*',
 //                     'S','*','P','^','P','*','*',
 //                     '*','P','*','*','*','P','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -496,7 +498,7 @@
 //                     '*','*','^','^','^','*','*','*',
 //                     '*','*','*','P','^','P','P','P',
 //                     '*','*','P','*','*','P','S','P'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -511,7 +513,7 @@
 //                     '*','*','^','^','^','*','*','*',
 //                     '*','*','*','P','^','P','P','P',
 //                     '*','*','P','*','*','P','S','P'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -523,7 +525,7 @@
 //                     '*','*','*','*',
 //                     '*','*','*','*',
 //                     'S','*','*','*'};
-//        Field f = new Field(test);
+//        Field f = new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -536,7 +538,7 @@
 //                     '*','^','^','^','*',
 //                     '*','*','*','^','*',
 //                     'S','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
@@ -551,7 +553,7 @@
 //                     '*','^','*','^','*','*',
 //                     '*','*','*','^','*','*',
 //                     'S','P','*','*','*','*'};
-//        Field f=new Field(test);
+//        Field f=new Field(new FakeFieldReader(test));
 //
 //        int result=f.fasterWay();
 //
