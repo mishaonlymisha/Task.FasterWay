@@ -1,7 +1,8 @@
 package com.company.writer;
 
-import com.company.ContainerOfDataField;
+import com.company.reader.FieldDataInput;
 
 public interface FieldWriter {
-    void tryWriteFieldAndFasterWay(ContainerOfDataField containerOfDataField, int way);
+    void tryWriteFieldAndFasterWay(FieldDataInput input, int way);
+
 }

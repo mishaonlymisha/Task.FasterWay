@@ -219,37 +219,37 @@ public class Field {
 
     }
 
-    boolean isStart(int i, int j) {
+    private boolean isStart(int i, int j) {
         if ((field[i][j] == 'S') || (field[i][j] == 's'))
             return true;
         return false;
     }
 
-    boolean isFinish(int i, int j) {
+    private boolean isFinish(int i, int j) {
         if ((field[i][j] == 'F') || (field[i][j] == 'f'))
             return true;
         return false;
     }
 
-    boolean isPort(int i, int j) {
+    private boolean isPort(int i, int j) {
         if ((field[i][j] == 'P') || (field[i][j] == 'p'))
             return true;
         return false;
     }
 
-    boolean isMountain(int i, int j) {
+    private boolean isMountain(int i, int j) {
         if (field[i][j] == '^')
             return true;
         return false;
     }
 
-    boolean leftTopIndexInsideTheMatrix(int i) {
+    private boolean leftTopIndexInsideTheMatrix(int i) {
         if (i - 1 >= 0)
             return true;
         return false;
     }
 
-    boolean rightBottomIndexInsideTheMatrix(int i) {
+    private boolean rightBottomIndexInsideTheMatrix(int i) {
         if (i + 1 <= size_matrix - 1)
             return true;
         return false;

@@ -1,8 +1,10 @@
 package com.company.writer;
 
+import com.company.reader.FieldDataInput;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import org.codehaus.jackson.annotate.JsonUnwrapped;
 
 import java.util.List;
 
@@ -10,6 +12,7 @@ import java.util.List;
 @ToString
 @Getter
 public class FieldDataOutput {
-    private List<String> field;
+    @JsonUnwrapped
+    private FieldDataInput field;
     private int fasterWay;
 }
