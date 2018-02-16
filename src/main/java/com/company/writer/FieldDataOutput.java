@@ -1,6 +1,7 @@
 package com.company.writer;
 
 import com.company.reader.FieldDataInput;
+import com.company.strategy.Point;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 public class FieldDataOutput {
     @JsonUnwrapped
-    private FieldDataInput field;
-    private int fasterWay;
+    private List<String> field;
+    private List<Point> path;
+    private String movingState;
 }

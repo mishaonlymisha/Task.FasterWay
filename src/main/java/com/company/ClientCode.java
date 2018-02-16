@@ -1,33 +1,50 @@
 package com.company;
 
+import com.company.army.SimpleArmy;
+import com.company.fieldClasses.ConverterOfDataField;
+import com.company.fieldClasses.Field;
 import com.company.reader.FieldDataInput;
 import com.company.reader.FieldReader;
-import com.company.reader.JsonFieldReader;
+import com.company.save.DataInfoForRestSave;
 import com.company.writer.FieldWriter;
-import com.company.writer.JsonFieldWriter;
+import lombok.AllArgsConstructor;
 
-import java.io.File;
-import java.io.InputStream;
 
 public class ClientCode {
     private final FieldReader reader;
     private final FieldWriter writer;
-
-    public ClientCode(File inputFileName, File outputFileName) {
-        this(new JsonFieldReader(inputFileName), new JsonFieldWriter(outputFileName));
-    }
+    private DataInfoForRestSave dataInfoForRestSave;
 
     public ClientCode(FieldReader reader, FieldWriter writer) {
         this.reader = reader;
         this.writer = writer;
     }
 
-    public void getFasterWay() {
-        FieldDataInput input = reader.tryReadField();
+    public DataInfoForRestSave getDataInfoForRestSave() {
+        return dataInfoForRestSave;
+    }
 
-        Field f = new Field(new ConverterOfDataField().convertListOfStringsToCharArray(input.getField()));
+    public void moveTillFinish() {
+        FieldDataInput input = reader.readField();
+        Field field = new ConverterOfDataField().convert(input.getField());
+        SimpleArmy simpleArmy = new SimpleArmy(field);
 
-        writer.tryWriteFieldAndFasterWay(input, f.fasterWay());
+        simpleArmy.moveTillFinish();
+
+        writer.tryWriteFieldAndFasterWay(input, simpleArmy.location());
+        dataInfoForRestSave = new DataInfoForRestSave(input.getField(),simpleArmy.location().getPathForSave(),simpleArmy.location().getMovingStateForSave());
+
+    }
+
+    public void moveFewSteps(int numberOfSteps) {
+        FieldDataInput input = reader.readField();
+        Field field = new ConverterOfDataField().convert(input.getField());
+        SimpleArmy simpleArmy = new SimpleArmy(field);
+
+        simpleArmy.move(numberOfSteps);
+
+        writer.tryWriteFieldAndFasterWay(input, simpleArmy.location());
+        dataInfoForRestSave = new DataInfoForRestSave(input.getField(),simpleArmy.location().getPathForSave(),simpleArmy.location().getMovingStateForSave());
 
     }
 

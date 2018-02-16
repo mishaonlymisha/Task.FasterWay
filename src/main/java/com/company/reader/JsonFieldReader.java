@@ -26,13 +26,11 @@ public class JsonFieldReader implements FieldReader {
     }
 
     @Override
-    public FieldDataInput tryReadField() {
+    public FieldDataInput readField() {
         try {
             return mapper.readValue(inputStream, FieldDataInput.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-
 }

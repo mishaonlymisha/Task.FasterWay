@@ -3,19 +3,18 @@ package com.company;
 import com.company.reader.FieldDataInput;
 import com.company.reader.FieldReader;
 
-public class FakeFieldReader implements FieldReader {
-    private final char[] field;
+import java.util.List;
 
-    public FakeFieldReader(char[] field) {
+public class FakeFieldReader implements FieldReader {
+    private final List<String> field;
+
+
+    public FakeFieldReader(List<String> field) {
         this.field = field;
     }
 
-    public char[] readField() {
-        return field;
-    }
-
     @Override
-    public FieldDataInput tryReadField() {
-        return null;
+    public FieldDataInput readField() {
+        return new FieldDataInput(field);
     }
 }
